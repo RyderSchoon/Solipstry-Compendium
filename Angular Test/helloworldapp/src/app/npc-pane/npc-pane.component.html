@@ -1,0 +1,76 @@
+<div *ngIf="isOpen">
+    <div class="container-fluid row" style="margin:0 0">
+        <div class="row">
+            <div style="border:1px solid black;display:inline-block">
+                <img [attr.src]="npc.imageSrc" style="max-width:192px;max-height:192px"  (click)="collapse()"/>
+            </div>
+            <div style="border:1px solid black;max-width:536px;display:inline-block">
+                <h5 style="text-align:center" (click)="collapse()">
+                    {{npc.name}}
+                </h5>
+                <p style="text-align:center">Homebrew: <b>{{npc.isHomebrew==true?"Yes":"No"}}</b> Version: <b>{{npc.npcversion}}</b> Author: <b>{{npc.npcauthor}}</b></p>
+                <div class="row statrow" style="background-color: #7eb977;">
+                    <div class="col-6">
+                        <label>
+                            Level:
+                        </label>
+                        <input [(ngModel)]="npc.level" placeholder="1" class="form-control float-right">
+                    </div>
+                    <div class="col-6">
+                        <label for="ACInput">AC: </label>
+                        <input id="ACInput" [(ngModel)]="npc.AC" placeholder="0" class="form-control float-right">
+                    </div>
+                </div>
+                <div class="row statrow">
+                    <div class="col-6">
+                        <label>
+                            Attack:
+                        </label>
+                        <input [(ngModel)]="npc.attack" placeholder="+0" class="form-control float-right">
+                    </div>
+                    <div class="col-6">
+                        <label>
+                            Will:
+                        </label>
+                        <input [(ngModel)]="npc.will" placeholder="will" class="form-control float-right">
+                    </div>
+                </div>
+                <div class="row statrow" style="background-color: #7eb977;">
+                    <div class="col-6">
+                        <label>
+                            Initiative:
+                        </label>
+                        <input [(ngModel)]="npc.initiative" placeholder="0" class="form-control float-right">
+                    </div>
+                    <div class="col-6">
+                        <label>
+                            Reflex:
+                        </label>
+                        <input [(ngModel)]="npc.reflex" placeholder="0" class="form-control float-right">
+                    </div>
+                </div>
+                <div class="row statrow">
+                    <div class="col-6">
+                        <label>
+                            Move:
+                        </label>
+                        <input [(ngModel)]="npc.move" placeholder="0" class="form-control float-right">
+                    </div>
+                    <div class="col-6">
+                        <label>
+                            Fortitude:
+                        </label>
+                        <input [(ngModel)]="npc.fortitude" placeholder="0" class="form-control float-right">
+                    </div>
+                </div>
+                <div style="border-top:1px solid black">
+                    <h5>Description</h5>
+                    <p>
+                        Larry runs and owns Lulu's Lullaby, a bar in Hescoroth. Customers flock here every night to get a taste of his signature Momento Mori cocktail
+                    </p>
+                </div>
+                <button (click)="save()">save</button>
+            </div>
+        </div>
+    </div>
+</div>

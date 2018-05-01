@@ -1,0 +1,4 @@
+<div *ngFor="let npc of npcs">
+    <app-npc-pane #sideBar [npc] = "npc" [npcService]="npcService"></app-npc-pane>
+    <app-npc-preview #preview [npc] = "npc" [npcPane]="sideBar"></app-npc-preview>
+</div>

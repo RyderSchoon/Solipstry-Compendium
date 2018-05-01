@@ -1,0 +1,27 @@
+<div *ngIf="isOpen">
+    <div class="container row" style="margin:0 0;">
+        <div class="row">
+            <div style="border:1px solid black;display:inline-block">
+                <img [attr.src]="npc.imageSrc" style="max-width:192px;max-height:192px" />
+            </div>
+            <div style="border:1px solid black;min-width:536px;max-width:536px;display:inline-block">
+                <h5 style="text-align:center" (click)="collapse()">
+                    {{npc.name}}
+                </h5>
+                <p style="text-align:center">Homebrew: <b>{{npc.isHomebrew==true?"Yes":"No"}}</b> Version: <b>{{npc.npcversion}}</b> Author: <b>{{npc.npcauthor}}</b></p>
+                <div class="row statrow" style="background-color: #7eb977;">
+                    <div class="col-6">
+                        <label>
+                            Level:
+                        </label>
+                        <input [(ngModel)]="npc.level" placeholder="1" class="form-control float-right">
+                    </div>
+                    <div class="col-6">
+                        <label for="ACInput">AC: </label>
+                        <input id="ACInput" [(ngModel)]="npc.AC" placeholder="0" class="form-control float-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

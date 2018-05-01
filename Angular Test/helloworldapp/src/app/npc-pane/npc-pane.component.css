@@ -1,0 +1,9 @@
+input {
+    width: 60px;
+    height: 34px;
+}
+
+.statrow {
+    max-width: 534px;
+    margin: 0 0;
+}
